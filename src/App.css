@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.display{
+  display: flex;
+  position: absolute;
+  top: 0;
+  
+}
+
+.box1{
+  position: 'sticky';
+  top: 0;
+  z-index: 9999;
+
+}
+.box2{
+  /* margin-top: -1000px; */
+  margin-top: 80px;
+ 
+
 }
