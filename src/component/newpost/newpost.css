@@ -11,19 +11,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* body{
+body{
 
-
-
-} */
-
-  .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
 }
-
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
 .fix1{
   /* background: url('https://i.imgur.com/kk76J5I.jpg') no-repeat top center; */
   background: url('https://images.wallpapersden.com/image/download/fern-plant-leaf_15574_2560x1440.jpg') no-repeat top center;

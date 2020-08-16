@@ -93,9 +93,9 @@ componentDidMount(){
 
     render(){
 return(<div>
-     <section id="client-reviews">
+     <section href="Testimonies ">
        {/* <h3>Testimonies..</h3> */}
-    <div class="container">
+    <div class="container checkit">
      <div class="row">
      <div class="testimonials  ">
 

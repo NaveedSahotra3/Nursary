@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -14,9 +14,106 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import Pagination from '@material-ui/lab/Pagination';
+import TextField from '@material-ui/core/TextField';
 import Carousel from '../slider/slider'
-import { withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button'
+import { Redirect } from 'react-router';
+import ButtonBase from '@material-ui/core/ButtonBase';
+// import Typography from '@material-ui/core/Typography';
+
+import { withRouter , Link } from 'react-router-dom';
+// import { makeStyles } from '@material-ui/core/styles';
+const images =[
+  {
+    // url: '/static/images/grid-list/breakfast.jpg',
+    url: 'https://wallup.net/wp-content/uploads/2016/01/138584-ladybugs-nature-plants.jpg',
+
+
+    title: 'Add New Post',
+    width: '10%',
+    height: '5%'
+  },
+]
 const useStyles = makeStyles((theme) => ({
+  
+
+  // root: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   minWidth: 300,
+  //   width: '100%',
+  // },
+  // image: {
+  //   position: 'relative',
+  //   height: 200,
+  //   [theme.breakpoints.down('xs')]: {
+  //     width: '100% !important', // Overrides inline-style
+  //     height: 100,
+  //   },
+  //   '&:hover, &$focusVisible': {
+  //     zIndex: 1,
+  //     '& $imageBackdrop': {
+  //       opacity: 0.15,
+  //     },
+  //     '& $imageMarked': {
+  //       opacity: 0,
+  //     },
+  //     '& $imageTitle': {
+  //       border: '4px solid currentColor',
+  //     },
+  //   },
+  // },
+  // focusVisible: {},
+  // imageButton: {
+  //   position: 'absolute',
+  //   left: 0,
+  //   right: 0,
+  //   top: 0,
+  //   bottom: 0,
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   color: theme.palette.common.white,
+  // },
+  // imageSrc: {
+  //   position: 'absolute',
+  //   left: 0,
+  //   right: 0,
+  //   top: 0,
+  //   bottom: 0,
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center 40%',
+  // },
+  // imageBackdrop: {
+  //   position: 'absolute',
+  //   left: 0,
+  //   right: 0,
+  //   top: 0,
+  //   bottom: 0,
+  //   backgroundColor: theme.palette.common.black,
+  //   opacity: 0.4,
+  //   transition: theme.transitions.create('opacity'),
+  // },
+  // imageTitle: {
+  //   position: 'relative',
+  //   padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+  // },
+  // imageMarked: {
+  //   height: 3,
+  //   width: 18,
+  //   backgroundColor: theme.palette.common.white,
+  //   position: 'absolute',
+  //   bottom: -2,
+  //   left: 'calc(50% - 9px)',
+  //   transition: theme.transitions.create('opacity'),
+  // },
+
+
+
+
+
+//.................................................................................
+
 
   blogsContainer: {
     paddingTop: theme.spacing(3)
@@ -43,28 +140,101 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center"
   },
-  // mainContainer: {
-  //   marginTop: 800
-  // }
+
+  adjSearch: {
+    float: 'right',
+    width: '500px',
+    fontSize: '30px',
+    paddingTop: theme.spacing(3)
+
+  },
+ Btn1:{
+   float:"rgiht"
+ }
+  // root: {
+  //     '& .MuiTextField-root': {
+  //       margin: theme.spacing(1),
+  //       width: '25ch',
+  //       float: 'right',
+  //             width: '500px'
+  //     },
+  //   },
+
 }));
 
-function Main() {
+ function MyAccount() {
 
-  const classes = useStyles();
+  const classes = useStyles()
 
-  return (<div className={classes.mainContainer}>
-
-
-
-    <Carousel />
+  return (<div>
 
 
-
-    {/* </Box> */}
     <Container maxWidth="lg" className={classes.blogsContainer}>
       <Typography variant="h4" className={classes.blogTitle}>
-        Products
+        My Account
         </Typography>
+      <TextField id="filled-search" label="Search field" className={classes.adjSearch} type="search" variant="filled" />
+    <Link to='/newpost'> 
+      
+    <Button  className={classes.Btn1} variant="contained" color="primary">
+        Add New Post 
+      </Button>
+
+    </Link>
+    {/* //................................................................................... */}
+
+
+
+
+
+
+    {/* <div className={classes.root}>
+      {images.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classes.imageTitle}
+            >
+              {image.title}
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+    </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={4}>
           <Card className={classes.card}>
@@ -289,7 +459,7 @@ function Main() {
         <Pagination count={10} />
       </Box>
     </Container>
-  </div>
-  );
+
+  </div>)
 }
-export default Main
+export default withRouter(MyAccount)

@@ -15,7 +15,10 @@ import Avatar from '@material-ui/core/Avatar';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import Pagination from '@material-ui/lab/Pagination';
 import Carousel from '../slider/slider'
-import { withRouter } from 'react-router-dom';
+import { withRouter , Link } from 'react-router-dom';
+// import imgsrc from '../PostDetail/contact.jpg'
+
+
 const useStyles = makeStyles((theme) => ({
 
   blogsContainer: {
@@ -42,26 +45,25 @@ const useStyles = makeStyles((theme) => ({
   paginationContainer: {
     display: "flex",
     justifyContent: "center"
-  },
-  // mainContainer: {
-  //   marginTop: 800
-  // }
+  }
 }));
 
-function Main() {
 
-  const classes = useStyles();
+ let detail = () =>{
+   console.log("aaaaaaaaaaa")
+ }
 
-  return (<div className={classes.mainContainer}>
+ function Product (){
+ 
+    const classes = useStyles();
+
+ 
+    
+
+    return(<div>
 
 
-
-    <Carousel />
-
-
-
-    {/* </Box> */}
-    <Container maxWidth="lg" className={classes.blogsContainer}>
+<Container maxWidth="lg" className={classes.blogsContainer}>
       <Typography variant="h4" className={classes.blogTitle}>
         Products
         </Typography>
@@ -69,11 +71,14 @@ function Main() {
         <Grid item xs={12} sm={6} md={4}>
           <Card className={classes.card}>
             <CardActionArea>
-              <CardMedia
+            <Link to='postDetail' title1="React useContext">
+            <CardMedia
+                 onClick={() => detail()}
                 className={classes.media}
                 image={require('../font/card2.jpg')}
                 title="Contemplative Reptile"
               />
+            </Link>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   React useContext
@@ -103,9 +108,10 @@ function Main() {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.card}>
+          <Card className={classes.card}   >
             <CardActionArea>
-              <CardMedia
+              <CardMedia 
+              onClick={() => detail()}
                 className={classes.media}
                 image={require('../font/card1.webp')}
                 title="Contemplative Reptile"
@@ -289,7 +295,8 @@ function Main() {
         <Pagination count={10} />
       </Box>
     </Container>
-  </div>
-  );
+
+    </div>)
 }
-export default Main
+
+export default withRouter(Product)

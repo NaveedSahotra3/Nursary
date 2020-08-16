@@ -1,8 +1,8 @@
 import React from 'react'
-import './signUp.css'
+import './newpost.css'
 
 
-class SignUp extends React.Component {
+class AddPost extends React.Component {
     render() {
         return (<div className="container-fluid">
 
@@ -16,15 +16,12 @@ class SignUp extends React.Component {
     <div class="input-fields">
       <input type="text" class="input" placeholder="Name"/>
       <input type="text" class="input" placeholder="Email Address"/>
-
       <input type="text" class="input" placeholder="Phone"/>
-      <input type="text" class="input" placeholder="Password"/>
+      <input type="text" class="input" placeholder="Subject"/>
     </div>
-    <div class="msg">
-      {/* <textarea placeholder="Message"></textarea> */}
-      <input type="text" class="input" placeholder="Location"/>
-
- </div> 
+    {/* <div class="msg">
+      <textarea placeholder="Message"></textarea>
+    </div> */}
   </div>
       <div class="btn">Sign Up</div>
       {/* <a  href="#" className="btn1" > Already Sign In?</a> */}
@@ -86,4 +83,4 @@ class SignUp extends React.Component {
     }
 }
 
-export default SignUp 
+export default AddPost 
